@@ -26,7 +26,7 @@ body {
   width: 100%;
   justify-content: center;
   height: 27rem;
-  gap: 1rem;
+  gap: .2rem;
 }
 .card-container > div.cardd,
 .info-weat {
