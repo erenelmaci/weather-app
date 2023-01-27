@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(./images/bg-images.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+.container {
+  margin-top: 3rem;
+  background-color: rgba(0, 0, 0, 0.151);
+  width: 30rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-container {
+  display: flex;
+  margin-top: 2rem;
+  width: 100%;
+  justify-content: center;
+  height: 27rem;
+  gap: 1rem;
+}
+.card-container > div.cardd,
+.info-weat {
+  flex: 2.5;
+  border-radius: 1rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  transition: all 0.8s cubic-bezier(0.25, 0.4, 0.45, 1.4);
+}
+.card-container > div:hover {
+  flex: 5;
+}
+.info-weat {
+  background-color: rgba(0, 0, 0, 0.555);
+  display: flex;
+  margin-top: .2rem;
+  margin-right: .2rem;
+  margin-bottom: .2rem;
+  margin-left: .2rem;
+  justify-content: center;
+  height: 26.6rem;
+}
