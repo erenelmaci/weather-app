@@ -76,31 +76,31 @@ const displayWeather = (data) => {
   card1.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
           <section class="degree">${fiveDaysForecast[0].temperature.toFixed(
             1
-          )}</section>
+          )}°C</section>
           <section class="weather">${fiveDaysForecast[0].weather}</section>
           <section class="info">${fiveDaysForecast[0].date}</section>`
   card2.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
           <section class="degree">${fiveDaysForecast[1].temperature.toFixed(
             1
-          )}</section>
+          )}°C</section>
           <section class="weather">${fiveDaysForecast[1].weather}</section>
           <section class="info">${fiveDaysForecast[1].date}</section>`
   card3.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
           <section class="degree">${fiveDaysForecast[2].temperature.toFixed(
             1
-          )}</section>
+          )}°C</section>
           <section class="weather">${fiveDaysForecast[2].weather}</section>
           <section class="info">${fiveDaysForecast[2].date}</section>`
   card4.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
           <section class="degree">${fiveDaysForecast[3].temperature.toFixed(
             1
-          )}</section>
+          )}°C</section>
           <section class="weather">${fiveDaysForecast[3].weather}</section>
           <section class="info">${fiveDaysForecast[3].date}</section>`
   card5.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
           <section class="degree">${fiveDaysForecast[4].temperature.toFixed(
             1
-          )}</section>
+          )}°C</section>
           <section class="weather">${fiveDaysForecast[4].weather}</section>
           <section class="info">${fiveDaysForecast[4].date}</section>`
 
