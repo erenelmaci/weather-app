@@ -34,8 +34,9 @@
   <body>
     <main>
       <div class="time-frame">
-        <div id="tarih-bolumu"></div>
-        <div id="saat-bolumu"></div>
+        <div class="date"></div>
+        br
+        <div class="clock"></div>
       </div>
       <script
         type="text/javascript"
@@ -50,8 +51,8 @@
           $(document).ready(function () {
             var interval = setInterval(function () {
               var momentNow = moment()
-              $("#tarih-bolumu").html(momentNow.format("DD.MM.YYYY"))
-              $("#saat-bolumu").html(momentNow.format("hh:mm:ss"))
+              $(".date").html(momentNow.format("DD.MM.YYYY"))
+              $(".clock").html(momentNow.format("hh:mm:ss"))
             }, 100)
           })
         })

@@ -120,11 +120,11 @@ img {
   width: 100%;
   justify-content: center;
 }
-#tarih-bolumu {
+.date {
   display: flex;
   font-size: 1.3rem;
   color: #073b36;
 }
-#saat-bolumu {
+.clock {
   font-size: 2rem;
 }
