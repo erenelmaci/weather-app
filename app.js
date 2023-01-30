@@ -8,9 +8,29 @@ const card3 = document.querySelector(".weather-info3")
 const card4 = document.querySelector(".weather-info4")
 const card5 = document.querySelector(".weather-info5")
 
-navigator.geolocation.getCurrentPosition(getWeather)
+navigator.geolocation.getCurrentPosition(getWeather, showError)
+
+function showError(error) {
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+      alert("Konum servisi kapalı. Lütfen konum servisini açın.")
+      break
+    case error.POSITION_UNAVAILABLE:
+      alert("Konum bilgisi kullanılamıyor.")
+      break
+    case error.TIMEOUT:
+      alert("Konum bilgisi alma zaman aşımına uğradı.")
+      break
+    case error.UNKNOWN_ERROR:
+      alert("Bilinmeyen hata.")
+      break
+  }
+}
+
+console.log(navigator.geolocation)
 
 window.addEventListener("load", () => {
+  showError(error)
 })
 
 function getWeather(position) {
@@ -74,31 +94,31 @@ const displayWeather = (data) => {
     fiveDaysForecast.push(dayForecast)
   }
   card1.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
-          <section class="degree">${fiveDaysForecast[0].temperature.toFixed(
+          <section class="degree">Hissedilen Sıcaklık: ${fiveDaysForecast[0].temperature.toFixed(
             1
           )}°C</section>
           <section class="weather">${fiveDaysForecast[0].weather}</section>
           <section class="info">${fiveDaysForecast[0].date}</section>`
   card2.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
-          <section class="degree">${fiveDaysForecast[1].temperature.toFixed(
+          <section class="degree">Hissedilen Sıcaklık: ${fiveDaysForecast[1].temperature.toFixed(
             1
           )}°C</section>
           <section class="weather">${fiveDaysForecast[1].weather}</section>
-          <section class="info">${fiveDaysForecast[1].date}</section>`
+          <section class="info">Hissedilen Sıcaklık: ${fiveDaysForecast[1].date}</section>`
   card3.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
-          <section class="degree">${fiveDaysForecast[2].temperature.toFixed(
+          <section class="degree">Hissedilen Sıcaklık: ${fiveDaysForecast[2].temperature.toFixed(
             1
           )}°C</section>
           <section class="weather">${fiveDaysForecast[2].weather}</section>
           <section class="info">${fiveDaysForecast[2].date}</section>`
   card4.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
-          <section class="degree">${fiveDaysForecast[3].temperature.toFixed(
+          <section class="degree">Hissedilen Sıcaklık: ${fiveDaysForecast[3].temperature.toFixed(
             1
           )}°C</section>
           <section class="weather">${fiveDaysForecast[3].weather}</section>
           <section class="info">${fiveDaysForecast[3].date}</section>`
   card5.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
-          <section class="degree">${fiveDaysForecast[4].temperature.toFixed(
+          <section class="degree">Hissedilen Sıcaklık: ${fiveDaysForecast[4].temperature.toFixed(
             1
           )}°C</section>
           <section class="weather">${fiveDaysForecast[4].weather}</section>
@@ -112,13 +132,11 @@ const displayWeather = (data) => {
 
 button.addEventListener("click", (e) => {
   for (let i = 0; i < 5; i++) {
-    var infoWeat = document.getElementsByClassName("info-weat")[i];
+    var infoWeat = document.getElementsByClassName("info-weat")[i]
     while (infoWeat.firstChild) {
-      infoWeat.removeChild(infoWeat.firstChild);
+      infoWeat.removeChild(infoWeat.firstChild)
     }
   }
-  e.preventDefault();
-  getWeatherByCity(input);
-});
-
-
+  e.preventDefault()
+  getWeatherByCity(input)
+})
