@@ -75,7 +75,7 @@ const displayWeather = (data) => {
       return itemDate.toDateString() == forecastDate.toDateString()
     })
     let dayForecast = {
-      date: forecastDate.toDateString(), // Here we get only the date and not the time
+      date: forecastDate.toDateString(), 
       temperature: 0,
       weather: "",
       icon: "",
