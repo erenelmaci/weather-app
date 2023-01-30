@@ -75,7 +75,7 @@ const displayWeather = (data) => {
       return itemDate.toDateString() == forecastDate.toDateString()
     })
     let dayForecast = {
-      date: forecastDate,
+      date: forecastDate.toDateString(), // Here we get only the date and not the time
       temperature: 0,
       weather: "",
       icon: "",
@@ -88,6 +88,8 @@ const displayWeather = (data) => {
     dayForecast.icon = forecastData[0].weather[0].icon
     fiveDaysForecast.push(dayForecast)
   }
+
+
 
   card1.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
                       <div class="info"><section>${fiveDaysForecast[0].date}</section>
