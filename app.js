@@ -1,6 +1,8 @@
-// require("dotenv").config();
-// const API_KEY = process.env.API_KEY;
-const API_KEY = "10439565916cb24be2a5f3daf0d08a46&units=metric";
+import * as dotenv from 'dotenv'
+dotenv.config()
+const API_KEY = process.env.API_KEY
+console.log(API_KEY)
+// const API_KEY = "10439565916cb24be2a5f3daf0d08a46&units=metric";
 const input = document.querySelector(".input")
 const button = document.querySelector(".button")
 
