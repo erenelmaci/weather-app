@@ -90,7 +90,7 @@ const displayWeather = (data) => {
     dayForecast.icon = forecastData[0].weather[0].icon
     fiveDaysForecast.push(dayForecast)
   }
-  
+
   card1.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
                       <div class="info"><section>${fiveDaysForecast[0].date}</section>
                       <section class="degree">Felt Temperature: ${fiveDaysForecast[0].temperature.toFixed(1)}°C</section>

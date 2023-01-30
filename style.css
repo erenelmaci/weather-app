@@ -54,6 +54,7 @@ body {
 }
 .weather {
   font-size: 1.4rem;
+  color: aquamarine;
   margin-bottom: 2rem;
 }
 .city {
@@ -96,4 +97,7 @@ img {
   width: 6rem;
   height: 6rem;
   margin-bottom: 1rem;
+}
+.card-container {
+  transition: all 0.8s ease-in-out;
 }
