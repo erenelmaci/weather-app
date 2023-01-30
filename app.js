@@ -1,4 +1,6 @@
-const API_KEY = "10439565916cb24be2a5f3daf0d08a46&units=metric"
+// require("dotenv").config();
+// const API_KEY = process.env.API_KEY;
+const API_KEY = "10439565916cb24be2a5f3daf0d08a46&units=metric";
 const input = document.querySelector(".input")
 const button = document.querySelector(".button")
 
@@ -26,12 +28,6 @@ function showError(error) {
       break
   }
 }
-
-console.log(navigator.geolocation)
-
-window.addEventListener("load", () => {
-  showError(error)
-})
 
 function getWeather(position) {
   const lat = position.coords.latitude
@@ -66,7 +62,6 @@ function getWeatherByCity(input) {
 
 const displayWeather = (data) => {
   const cityName = data.city.name
-  console.log(data)
   const country = data.city.country
   const weatherData = data.list
 
@@ -85,49 +80,42 @@ const displayWeather = (data) => {
       date: forecastDate,
       temperature: 0,
       weather: "",
+      icon: "",
     }
     forecastData.forEach((item) => {
       dayForecast.temperature += item.main.temp
     })
     dayForecast.temperature = dayForecast.temperature / forecastData.length
     dayForecast.weather = forecastData[0].weather[0].main
+    dayForecast.icon = forecastData[0].weather[0].icon
     fiveDaysForecast.push(dayForecast)
   }
+  
   card1.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
-          <section class="degree">Hissedilen Sıcaklık: ${fiveDaysForecast[0].temperature.toFixed(
-            1
-          )}°C</section>
-          <section class="weather">${fiveDaysForecast[0].weather}</section>
-          <section class="info">${fiveDaysForecast[0].date}</section>`
-  card2.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
-          <section class="degree">Hissedilen Sıcaklık: ${fiveDaysForecast[1].temperature.toFixed(
-            1
-          )}°C</section>
-          <section class="weather">${fiveDaysForecast[1].weather}</section>
-          <section class="info">Hissedilen Sıcaklık: ${fiveDaysForecast[1].date}</section>`
-  card3.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
-          <section class="degree">Hissedilen Sıcaklık: ${fiveDaysForecast[2].temperature.toFixed(
-            1
-          )}°C</section>
-          <section class="weather">${fiveDaysForecast[2].weather}</section>
-          <section class="info">${fiveDaysForecast[2].date}</section>`
-  card4.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
-          <section class="degree">Hissedilen Sıcaklık: ${fiveDaysForecast[3].temperature.toFixed(
-            1
-          )}°C</section>
-          <section class="weather">${fiveDaysForecast[3].weather}</section>
-          <section class="info">${fiveDaysForecast[3].date}</section>`
-  card5.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
-          <section class="degree">Hissedilen Sıcaklık: ${fiveDaysForecast[4].temperature.toFixed(
-            1
-          )}°C</section>
-          <section class="weather">${fiveDaysForecast[4].weather}</section>
-          <section class="info">${fiveDaysForecast[4].date}</section>`
+                      <div class="info"><section>${fiveDaysForecast[0].date}</section>
+                      <section class="degree">Felt Temperature: ${fiveDaysForecast[0].temperature.toFixed(1)}°C</section>
+                      <section class="weather">Weather: ${fiveDaysForecast[0].weather}</section>
+                      <section class="icon"><img src="${"https://openweathermap.org/img/wn/" + fiveDaysForecast[0].icon + ".png"}" alt="icon"></section></div>`
 
-  console.log(fiveDaysForecast[0])
-  console.log("City: ", cityName)
-  console.log("Country: ", country)
-  console.log("5 Days Forecast: ", fiveDaysForecast)
+  card2.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
+                      <div class="info"><section>${fiveDaysForecast[1].date}</section>
+                      <section class="degree">Felt Temperature: ${fiveDaysForecast[1].temperature.toFixed(1)}°C</section>
+                      <section class="weather">Weather: ${fiveDaysForecast[1].weather}</section><section class="icon"><img src="${"https://openweathermap.org/img/wn/" + fiveDaysForecast[1].icon + ".png"}" alt="icon"></section></div>`
+
+  card3.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
+                      <div class="info"><section>${fiveDaysForecast[2].date}</section>
+                      <section class="degree">Felt Temperature: ${fiveDaysForecast[2].temperature.toFixed(1)}°C</section>
+                      <section class="weather">Weather: ${fiveDaysForecast[2].weather}</section>
+                      <section class="icon"><img src="${"https://openweathermap.org/img/wn/" + fiveDaysForecast[2].icon + ".png"}" alt="icon"></section></div>`
+
+  card4.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
+                      <div class="info"><section>${fiveDaysForecast[3].date}</section>
+                      <section class="degree">Felt Temperature: ${fiveDaysForecast[3].temperature.toFixed(1)}°C</section><section class="weather">Weather: ${fiveDaysForecast[3].weather}</section><section class="icon"><img src="${"https://openweathermap.org/img/wn/" + fiveDaysForecast[3].icon + ".png"}" alt="icon"></section></div>`
+
+  card5.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
+                      <div class="info"><section>${fiveDaysForecast[4].date}</section>
+                      <section class="degree">Felt Temperature: ${fiveDaysForecast[4].temperature.toFixed(1)}°C</section>
+                      <section class="weather">Weather: ${fiveDaysForecast[4].weather}</section><section class="icon"><img src="${"https://openweathermap.org/img/wn/" + fiveDaysForecast[4].icon + ".png"}" alt="icon"></section></div>`
 }
 
 button.addEventListener("click", (e) => {
