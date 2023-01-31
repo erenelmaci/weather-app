@@ -126,5 +126,6 @@ button.addEventListener("click", (e) => {
     }
   }
   e.preventDefault()
+  e.currentTarget.reset()
   getWeatherByCity(input)
 })
