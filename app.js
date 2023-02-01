@@ -89,33 +89,33 @@ const displayWeather = (data) => {
     fiveDaysForecast.push(dayForecast)
   }
 
-
+  const iconUrlAWS = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${fiveDaysForecast[0].icon}.svg`;
 
   card1.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
                       <div class="info"><section>${fiveDaysForecast[0].date}</section>
                       <section class="degree">Felt Temperature: ${fiveDaysForecast[0].temperature.toFixed(1)}°C</section>
                       <section class="weather">Weather: ${fiveDaysForecast[0].weather}</section>
-                      <section class="icon"><img src="${"https://openweathermap.org/img/wn/" + fiveDaysForecast[0].icon + ".png"}" alt="icon"></section></div>`
+                      <section class="icon"><img src="${iconUrlAWS}" alt="icon"></section></div>`
 
   card2.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
                       <div class="info"><section>${fiveDaysForecast[1].date}</section>
                       <section class="degree">Felt Temperature: ${fiveDaysForecast[1].temperature.toFixed(1)}°C</section>
-                      <section class="weather">Weather: ${fiveDaysForecast[1].weather}</section><section class="icon"><img src="${"https://openweathermap.org/img/wn/" + fiveDaysForecast[1].icon + ".png"}" alt="icon"></section></div>`
+                      <section class="weather">Weather: ${fiveDaysForecast[1].weather}</section><section class="icon"><img src="${iconUrlAWS}" alt="icon"></section></div>`
 
   card3.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
                       <div class="info"><section>${fiveDaysForecast[2].date}</section>
                       <section class="degree">Felt Temperature: ${fiveDaysForecast[2].temperature.toFixed(1)}°C</section>
                       <section class="weather">Weather: ${fiveDaysForecast[2].weather}</section>
-                      <section class="icon"><img src="${"https://openweathermap.org/img/wn/" + fiveDaysForecast[2].icon + ".png"}" alt="icon"></section></div>`
+                      <section class="icon"><img src="${iconUrlAWS}" alt="icon"></section></div>`
 
   card4.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
                       <div class="info"><section>${fiveDaysForecast[3].date}</section>
-                      <section class="degree">Felt Temperature: ${fiveDaysForecast[3].temperature.toFixed(1)}°C</section><section class="weather">Weather: ${fiveDaysForecast[3].weather}</section><section class="icon"><img src="${"https://openweathermap.org/img/wn/" + fiveDaysForecast[3].icon + ".png"}" alt="icon"></section></div>`
+                      <section class="degree">Felt Temperature: ${fiveDaysForecast[3].temperature.toFixed(1)}°C</section><section class="weather">Weather: ${fiveDaysForecast[3].weather}</section><section class="icon"><img src="${iconUrlAWS}" alt="icon"></section></div>`
 
   card5.innerHTML += `<section class="city">${cityName} <sup>${country}</sup></section>
                       <div class="info"><section>${fiveDaysForecast[4].date}</section>
                       <section class="degree">Felt Temperature: ${fiveDaysForecast[4].temperature.toFixed(1)}°C</section>
-                      <section class="weather">Weather: ${fiveDaysForecast[4].weather}</section><section class="icon"><img src="${"https://openweathermap.org/img/wn/" + fiveDaysForecast[4].icon + ".png"}" alt="icon"></section></div>`
+                      <section class="weather">Weather: ${fiveDaysForecast[4].weather}</section><section class="icon"><img src="${iconUrlAWS}" alt="icon"></section></div>`
 }
 
 button.addEventListener("click", (e) => {

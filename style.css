@@ -2,7 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Josefin Slab", serif;
+  /* font-family: "Josefin Slab", serif; */
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -89,13 +90,16 @@ body {
   font-size: 1rem;
 }
 sup {
-  font-size: 1rem;
+  font-size: .8rem;
+  color: #000000;
+  border-radius: .2rem;
+  background-color: rgb(236, 110, 8);
 }
 img {
-  background-color: rgba(247, 133, 3, 0.746);
-  border-radius: 5rem;
-  width: 6rem;
-  height: 6rem;
+  background-color: rgba(0, 252, 223, 0.741);
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
   margin-bottom: 1rem;
 }
 .card-container {
